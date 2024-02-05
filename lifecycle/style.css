@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300&display=swap");
+
+section {
+  font-size: 14pt;
+  margin: 20px;
+}
+
+.divider {
+  border-top: 1px solid #cecece;
+  margin: 20px 0;
+  padding: 0;
+}
+
+a {
+  color: cornflowerblue;
+  text-decoration: none;
+}

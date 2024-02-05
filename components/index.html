@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="components/style.css" />
+    <script src="script.js"></script>
+    <title>Project</title>
+  </head>
+  <body>
+    <section>
+      <div class="text-4xl font-bold">Angular components</div>
+      <div class="text-xl mt-8">
+        Components are the main building blocks for Angular applications. Each
+        component consists of:
+      </div>
+      <ul class="list-disc mt-4 ml-8">
+        <li class="mt-2">
+          An HTML template that declares what renders on the page
+        </li>
+        <li class="mt-2">A Typescript class that defines behavior</li>
+        <li class="mt-2">
+          A CSS selector that defines how the component is used in a template
+        </li>
+      </ul>
+      <div class="text-xl mt-8">
+        This topic describes how to create and configure an Angular component.
+      </div>
+      <div class="divider"></div>
+    </section>
+
+    <section>
+      <div class="text-4xl font-bold">Prerequisites</div>
+      <div class="text-xl mt-8">
+        To create a component, verify that you have met the following
+        prerequisites:
+      </div>
+      <ul class="list-disc mt-4 ml-8">
+        <li class="mt-2">
+          install the <a href="" class="text-blue-500">Angular CLI</a> 
+        </li>
+        <li class="mt-2">
+          Create an Angular workspace with initial application. If you don't have a project, create one using ng new <project-name>, where <project-name> is the name of your Angular application.
+        </li>
+      </ul>
+      <div class="divider"></div>
+    </section>
+    <section>
+      <div class="text-4xl font-bold">Creating a component</div>
+      <div class="text-xl mt-8">The best way to create a component is with the Angular CLI. You can also create a component manually.</div>
+      <div class="text-2xl font-bold mt-8">Creating a component using the Angular CLI</div>
+      <div class="text-xl mt-8">To create a component using the Angular CLI:</div>
+      <ol class="list-disc mt-4 ml-8">
+        <li class="mt-2">
+          From a terminal window, navigate to the directory containing your application.
+        </li>
+        <li class="mt-2">
+          Run the ng generate component <component-name> command, where <component-name> is the name of your new component.
+        </li>
+      </ol>
+      <div class="text-xl mt-8">By default, this command creates the following:</div>
+      <ul class="list-disc mt-4 ml-8">
+        <li class="mt-2">
+          A directory named after the component
+        </li>
+        <li class="mt-2">
+          A component file, <component-name>.component.ts
+        </li>
+        <li class="mt-2">
+          A template file, <component-name>.component.html
+        </li>
+        <li class="mt-2">
+          A CSS file, <component-name>.component.css
+        </li>
+        <li class="mt-2">
+          A testing specification file, <component-name>.component.spec.ts
+        </li>
+      </ul>
+      <div class="text-xl mt-8">Where <component-name> is the name of your component.</div>
+      <div class="divider"></div>
+    </section>
+
+    <section>
+      <div class="text-4xl font-bold">Creating a component manually</div>
+      <div class="text-xl mt-8">Although the Angular CLI is the best way to create an Angular component, you can also create a component manually. This section describes how to create the core component file within an existing Angular project.</div>
+      <div class="text-xl mt-8">To create a new component manually:</div>
+      <ol class="list-disc mt-4 ml-8">
+        <li class="mt-2">
+          Navigate to your Angular project directory.
+        </li>
+        <li class="mt-2">
+          Create a new file, <component-name>.component.ts.
+        </li>
+        <li class="mt-2">
+          At the top of the file, add the following import statement.
+        </li> 
+        <div>
+        <img src="assets/carbon (10).png" width="600">
+      </div>
+        <li class="mt-2">
+          After the import statement, add a @Component decorator.
+        </li>
+        <div>
+        <img src="assets/carbon (11).png" width="400">
+      </div>
+        <li class="mt-2">
+          Choose a CSS selector for the component.
+        </li>
+      <div>
+        <img src="assets/carbon (12).png" width="600">
+      </div>
+      <div class="text-xl mt-8">For more information on choosing a selector, see Specifying a component's selector.</div>
+      <li>Define the HTML template that the component uses to display information. In most cases, this template is a separate HTML file.</li>
+      <div>
+        <img src="assets/carbon (13).png" width="600">
+      </div>
+      <div >
+      <div class="text-xl mt-8">
+        For more information on defining a component's template, see <a href="" >Defining a component's template.</a>
+      </div>
+      <li class="mt-2">Select the styles for the component's template. In most cases, you define the styles for your component's template in a separate file.</li>
+      <div>
+        <img src="assets/carbon (14).png" alt="">
+      </div>
+      <li class="mt-2">
+        Add a class statement that includes the code for the component.
+      </li>
+      <div>
+        <img src="assets/carbon (15).png" alt=""></div>
+      </ol>
+    </section>
+  </body>
+</html>

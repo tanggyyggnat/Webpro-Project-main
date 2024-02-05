@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="standalone/style.css" />
+  <script src="script.js"></script>
+  <title>Project</title>
+</head>
+
+<body>
+  <section>
+    <div class="text-4xl font-bold mt-8">Getting started with standalone components</div>
+    <div class="text-xl mt-8">Standalone components provide a simplified way to build Angular applications. Standalone
+      components,
+      directives, and pipes aim to streamline the authoring experience by reducing the need for NgModules. Existing
+      applications can optionally and incrementally adopt the new standalone style without any breaking changes.</div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold mt-8">Creating standalone components</div>
+    <!-- A-Frame Video Entity -->
+    <!-- <a-scene>
+      <a-video
+        src="https://www.youtube.com/embed/x5PZwb4XurU"
+        width="640"
+        height="360"
+        position="0 2 -5"
+        rotation="0 0 0"
+      ></a-video> -->
+
+    <!-- A-Frame Camera -->
+    <!-- <a-entity camera look-controls wasd-controls></a-entity>
+    </a-scene> -->
+    <div class="text-3xl font-bold mt-8">The standalone flag and component imports</div>
+    <div class="text-xl mt-8 ml-8">Components, directives, and pipes can now be marked as standalone: true. Angular
+      classes
+      marked as
+      standalone do not need to be declared in an NgModule (the Angular compiler will report an error if you try).</div>
+    <div class="text-xl mt-8 ml-8">Standalone components specify their dependencies directly instead of getting them
+      through
+      NgModules. For
+      example, if PhotoGalleryComponent is a standalone component, it can directly import another standalone component
+      ImageGridComponent:</div>
+    <div>
+      <center><img src="assets/carbon (23).png" width="700"></center>
+    </div>
+    <div class="text-xl mt-8 ml-8">imports can also be used to reference standalone directives and pipes. In this way,
+      standalone components can be written without the need to create an NgModule to manage template dependencies.</div>
+    <div class="text-3xl font-bold mt-8">Using existing NgModules in a standalone component</div>
+    <div class="text-xl mt-8">When writing a standalone component, you may want to use other components, directives, or
+      pipes in the component's template. Some of those dependencies might not be marked as standalone, but instead
+      declared and exported by an existing NgModule. In this case, you can import the NgModule directly into the
+      standalone component:</div>
+    <div>
+      <center><img src="assets/carbon (24).png" width="700"></center>
+    </div>
+    <div class="text-xl mt-8">You can use standalone components with existing NgModule-based libraries or dependencies
+      in your template.
+      Standalone components can take full advantage of the existing ecosystem of Angular libraries.</div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl mt-8">Using standalone components in NgModule-based applications</div>
+    <div class="mt-8">Standalone components can also be imported into existing NgModules-based contexts. This allows
+      existing
+      applications (which are using NgModules today) to incrementally adopt the new, standalone style of component.
+    </div>
+    <div class="mt-8">You can import a standalone component (or directive, or pipe) just like you would an <code
+        class="text-green-500">NgModule</code> - using
+      <code class="text-green-500">NgModule.imports</code>:
+    </div>
+    <div>
+      <center><img src="assets/carbon (25).png" width="700"></center>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl font-bold mt-8">Bootstrapping an application using a standalone component
+    </div>
+    <div class="mt-8">An Angular application can be bootstrapped without any <code
+        class="text-green-500">NgModule</code> by using a standalone component as the
+      application's root component. This is done using the <code class="text-green-500">bootstrapApplication</code> API:
+    </div>
+    <div>
+      <center><img src="assets/carbon (26).png" width="700"></center>
+    </div>
+    <div class="text-3xl font-bold mt-8">Configuring dependency injection</div>
+    <div class="mt-8">When bootstrapping an application, often you want to configure Angular’s dependency injection and
+      provide
+      configuration values or services for use throughout the application. You can pass these as providers to
+      <code class="text-green-500">bootstrapApplication</code>:
+    </div>
+    <div>
+      <center><img src="assets/carbon (27).png" width="700"></center>
+    </div>
+    <div class="mt-8">The standalone bootstrap operation is based on explicitly configuring a list of <code>Providers</code> for dependency
+      injection. In Angular, <code>provide</code>-prefixed functions can be used to configure different systems without needing to
+      import NgModules. For example, <code>provideRouter</code> is used in place of <code>RouterModule.forRoot</code> to configure the router:
+    </div>
+  </section>
+</body>
+
+</html>

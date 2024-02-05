@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="binding/style.css" />
+  <script src="script.js"></script>
+  <title>Project</title>
+</head>
+
+<body>
+  <section>
+    <div class="text-4xl font-bold">Understanding binding
+    </div>
+    <div class="text-xl mt-8">In an Angular template, a binding creates a live connection between a part of the UI
+      created
+      from a template (a
+      DOM element, directive, or component) and the model (the component instance to which the template belongs). This
+      connection can be used to synchronize the view with the model, to notify the model when an event or user action
+      takes place in the view, or both. Angular's Change Detection algorithm is responsible for keeping the view and the
+      model in sync.</div>
+    <div class="text-xl mt-8">Examples of binding include:</div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">
+        text interpolations
+      </li>
+      <li class="mt-2">property binding</li>
+      <li class="mt-2">event binding</li>
+      <li class="mt-2">two-way binding</li>
+    </ul>
+    <div class="text-xl mt-8">Bindings always have two parts: a target which will receive the bound value, and a
+      template expression which
+      produces a value from the model.</div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl font-bold mt-8">Syntax</div>
+    <div class="text-xl mt-8">Template expressions are similar to JavaScript expressions. Many JavaScript expressions
+      are legal template expressions, with the following exceptions.</div>
+    <div class="text-xl mt-8">You can't use JavaScript expressions that have or promote side effects, including:</div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">
+        Assignments (=, +=, -=, ...)
+      </li>
+      <li class="mt-2">
+        Operators such as new, typeof, or instanceof
+      </li>
+      <li class="mt-2">
+        Chaining expressions with ; or ,
+      </li>
+      <li class="mt-2">
+        The increment and decrement operators ++ and --
+      </li>
+      <li class="mt-2">
+        Some of the ES2015+ operators
+      </li>
+    </ul>
+    <div class="text-xl mt-8">Other notable differences from JavaScript syntax include:</div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">No support for the bitwise operators such as | and &
+      </li>
+      <li class="mt-2">
+        New template expression operators, such as |
+      </li>
+    </ul>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl font-bold mt-8">
+      Expression context
+    </div>
+    <div class="text-xl mt-8">Interpolated expressions have a context—a particular part of the application to which the
+      expression belongs. Typically, this context is the component instance.</div>
+    <div class="text-xl mt-8">In the following snippet, the expression recommended and the expression itemImageUrl2
+      refer to properties of the AppComponent.</div>
+    <div>
+      <center><img src="assets/carbon (17).png" width="600"></center>
+    </div>
+    <div class="text-xl mt-8">An expression can also refer to properties of the template's context such as a template
+      input variable or a
+      template reference variable. <br>
+      The following example uses a template input variable of customer.</div>
+    <div>
+      <center><img src="assets/carbon (18).png" width="600"></center>
+    </div>
+    <div class="text-xl mt-8">
+      This next example features a template reference variable, #customerInput.
+    </div>
+    <div>
+      <center><img src="assets/carbon (19).png" alt="" width="600"></center>
+    </div>
+
+    <div class="bg-sky-900 p-5 border-l-4 mt-8">Template expressions cannot refer to anything in the global namespace,
+      except undefined. They can't refer to
+      window or document. Additionally, they can't call console.log() or Math.max() and are restricted to referencing
+      members of the expression context.</div>
+    <div class="text-3xl mt-8">Preventing name collisions</div>
+    <div class="text-xl mt-8">The context against which an expression evaluates is the union of the template variables,
+      the directive's
+      context object—if it has one—and the component's members. If you reference a name that belongs to more than one of
+      these namespaces, Angular applies the following precedence logic to determine the context:
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">The template variable name.
+      </li>
+      <li class="mt-2">A name in the directive's context.
+      </li>
+      <li class="mt-2">The component's member names.
+      </li>
+    </ul>
+    <div class="text-xl mt-8">To avoid variables shadowing variables in another context, keep variable names unique. In
+      the following
+      example, the AppComponent template greets the customer, Padma.</div>
+    <div class="text-xl mt-8">An ngFor then lists each customer in the customers array.</div>
+    <div>
+      <center><img src="assets/carbon (20).png" width="600"></center>
+    </div>
+    <div class="text-xl mt-8">The customer within the ngFor is in the context of the implicit <ng-template> defined by
+        the ngFor. It refers
+        to each customer in the customers array and displays "Ebony" and "Chiho". "Padma" is not displayed because that
+        name is not in that array.
+    </div>
+    <div class="text-xl mt-8">On the other hand, the <h1> displays "Padma" which is bound to the value of the customer
+        property in the component class.</div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl mt-8">Expression best practices
+    </div>
+    <div class="text-xl mt-8">When using a template expression, follow these best practices:</div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2 font-bold">Use short expressions
+      </li>
+    </ul>
+    <div class="text-xl mt-8">
+      Use property names or method calls whenever possible. Keep application and business logic in the component, where
+      it is accessible to develop and test.
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2 font-bold">Quick execution</li>
+    </ul>
+    <div class="mt-8">Angular executes a template expression after every change detection cycle. Many asynchronous
+      activities trigger
+      change detection cycles, such as promise resolutions, HTTP results, timer events, key presses, and mouse moves.
+    </div>
+    <div class="mt-8">An expression should finish quickly to keep the user experience as efficient as possible, especially on slower
+      devices. Consider caching values when their computation requires greater resources.</div>
+  </section>
+</body>
+
+</html>

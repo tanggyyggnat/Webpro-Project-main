@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="setup/style.css" />
+  <script src="script.js"></script>
+  <title>Project</title>
+</head>
+
+<body>
+  <section>
+    <div class="text-4xl font-bold">
+      Setting up the local environment and workspace
+    </div>
+    <div class="text-xl mt-8">
+      This guide explains how to set up your environment for Angular development using the Angular CLI tool. It includes
+      information about prerequisites, installing the CLI, creating an initial workspace and starter app, and running
+      that app locally to verify your setup.
+    </div>
+    <div>
+      <table class="table-auto p-6 mt-8">
+        <thead>
+          <tr>
+            <th class="bg-sky-950 p-5 border-l-4">TRY ANGULAR WITHOUT LOCAL SETUP</th>
+          </tr>
+        </thead>
+        <tbody class="bg-sky-900 border-l-4">
+          <tr>
+            <td class="p-5">If you are new to Angular, you might want to start with Try it now!, which
+              introduces the essentials of
+              Angular in the context of a ready-made basic online store app for you to examine and modify. This
+              standalone
+              tutorial takes advantage of the interactive StackBlitz environment for online development. You don't need
+              to
+              set up your local environment until you're ready.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold">
+      Prerequisites
+    </div>
+    <div class="text-xl mt-8">
+      To use the Angular framework, you should be familiar with the following:
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">
+        <a href="">JavaScript</a>
+      </li>
+      <li class="mt-2">
+        <a href="">HTML</a>
+      </li>
+      <li class="mt-2">
+        <a href="">CSS</a>
+      </li>
+    </ul>
+    <div class="text-xl mt-8">
+      Knowledge of <a>TypeScript</a> is helpful, but not required.
+    </div>
+    <div class="text-xl mt-8">
+      To install Angular on your local system, you need the following:
+    </div>
+    <div>
+      <table class="bg-sky-900 p-5 border-l-4 mt-8">
+        <thead>
+          <tr>
+            <th class="bg-sky-950 p-5 border-l-4">REQUIREMENTS</th>
+            <th class="bg-sky-950 p-5 border-l-4">DETAILS</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="p-5">Node.js</td>
+            <td class="p-5 border-l-4">Angular requires an active LTS or maintenance LTS version of Node.js</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td class="p-5 border-l-4">npm package manager</td>
+            <td class="p-5 border-l-4">Angular, the Angular CLI, and Angular applications depend on npm packages for
+              many features and
+              functions. To download and install npm packages, you need an npm package manager. This guide uses the npm
+              client command line interface, which is installed with Node.js by default. To check that you have the npm
+              client installed, run npm -v in a terminal window.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold mt-8">Install the Angular CLI</div>
+    <div class="text-xl mt-8">You can use the Angular CLI to create projects, generate application and library code, and
+      perform a variety of
+      ongoing development tasks such as testing, bundling, and deployment.
+    </div>
+    <div class="text-xl mt-4">
+      To install the Angular CLI, open a terminal window and run the following command:
+    </div>
+    <div class="mt-8"><code class="bg-slate-950 p-2 text-green-500 rounded">npm install -g @angular/cli</code></div>
+    <div class="bg-sky-950 p-5 border-l-4 mt-8 p-3">
+      On Windows client computers, the execution of PowerShell scripts is disabled by default. To allow the execution of
+      PowerShell scripts, which is needed for npm global binaries, you must set the following execution policy:
+      <br>
+      <code
+        class="bg-slate-950 p-2 text-green-500 rounded">Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code><br>
+      Carefully read the message displayed after executing the command and follow the instructions. Make sure you
+      understand the implications of setting an execution policy.
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold mt-8">
+      Create a workspace and initial application
+    </div>
+    <div class="text-xl mt-4">
+      You develop apps in the context of an Angular workspace. <br>
+      To create a new workspace and initial starter app:
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">Run the CLI command ng new and provide the name my-app, as shown here:
+        <code class="bg-slate-950 p-2 text-green-500 rounded">ng new my-app</code>
+      </li>
+      <li class="mt-2">
+        The ng new command prompts you for information about features to include in the initial app. Accept the defaults
+        by pressing the Enter or Return key.
+      </li>
+    </ul>
+    <div class="text-xl mt-4">
+      The Angular CLI installs the necessary Angular npm packages and other dependencies. This can take a few minutes.
+      <br>
+      The CLI creates a new workspace and a simple Welcome app, ready to run.
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold mt-8">
+      Run the application
+    </div>
+    <div class="text-xl mt-4">
+      The Angular CLI includes a server, for you to build and serve your app locally.
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">Navigate to the workspace folder, such as my-app.
+      </li>
+      <li class="mt-2">
+        Run the following command: <br><code class="bg-slate-950 p-2 text-green-500 rounded">cd my-app <br>
+          ng serve --open</code>
+      </li>
+    </ul>
+    <div class="text-xl mt-4">
+      The ng serve command launches the server, watches your files, and rebuilds the app as you make changes to those
+      files. <br>
+      The --open (or just -o) option automatically opens your browser to http://localhost:4200/. <br>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-4xl font-bold mt-8">
+      Next steps
+    </div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">For a more thorough introduction to the fundamental concepts and terminology of Angular
+        single-page app architecture and design principles, read the Angular Concepts section.
+      </li>
+      <li class="mt-2">
+        Work through the Tour of Heroes Tutorial, a complete hands-on exercise that introduces you to the app
+        development process using the Angular CLI and walks through important subsystems.
+      </li>
+      <li class="mt-2">
+        To learn more about using the Angular CLI, see the CLI Overview. In addition to creating the initial workspace
+        and app scaffolding, use the CLI to generate Angular code such as components and services. The CLI supports the
+        full development cycle, including building, testing, bundling, and deployment.
+      </li>
+      <li class="mt-2">
+        For more information about the Angular files generated by ng new, see Workspace and Project File Structure.
+      </li>
+    </ul>
+  </section>
+
+</body>
+
+</html>

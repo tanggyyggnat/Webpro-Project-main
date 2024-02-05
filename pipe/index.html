@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="pipe/style.css" />
+  <script src="script.js"></script>
+  <title>Project</title>
+</head>
+
+<body>
+  <section>
+    <div class="text-4xl font-bold mt-8">Understanding Pipes</div>
+    <div class="mt-8">Use pipes to transform strings, currency amounts, dates, and other data for display.
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl font-bold mt-8">What is a pipe</div>
+    <div class="mt-8">Pipes are simple functions to use in template expressions to accept an input value and return a
+      transformed value. Pipes are useful because you can use them throughout your application, while only declaring
+      each pipe once. For example, you would use a pipe to show a date as April 15, 1988 rather than the raw string
+      format.</div> <br>
+    <div class="p-5 border-l-4 bg-sky-900">For the sample application used in this topic, see the <a>live example</a>/
+      <a>download example.</a>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section>
+    <div class="text-3xl font-bold mt-8">Built-in pipes</div>
+    <div class="mt-8">Angular provides built-in pipes for typical data transformations, including transformations for
+      internationalization (i18n), which use locale information to format data. The following are commonly used built-in
+      pipes for data formatting:</div>
+    <ul class="list-disc mt-4 ml-8">
+      <li class="mt-2">DatePipe: Formats a date value according to locale rules.</li>
+      <li class="mt-2">UpperCasePipe: Transforms text to all upper case.</li>
+      <li class="mt-2">LowerCasePipe: Transforms text to all lower case.</li>
+      <li class="mt-2">CurrencyPipe: Transforms a number to a currency string, formatted according to locale rules.</li>
+      <li class="mt-2">DecimalPipe: Transforms a number into a string with a decimal point, formatted according to
+        locale rules.</li>
+      <li class="mt-2">PercentPipe: Transforms a number to a percentage string, formatted according to locale rules.
+      </li>
+      <li class="mt-2">AsyncPipe: Subscribe and unsubscribe to an asynchronous source such as an observable.</li>
+      <li class="mt-2">JsonPipe: Display a component object property to the screen as JSON for debugging.</li>
+    </ul>
+    <div class="bg-sky-900 p-5 border-l-4">
+      <ul class="list-disc mt-4 ml-8">
+        <li class="mt-2">For a complete list of built-in pipes, see the pipes API documentation.</li>
+        <li class="mt-2">To learn more about using pipes for internationalization (i18n) efforts, see formatting data
+          based on locale.</li>
+    </div>
+    <div class="mt-8">Create your own pipes to encapsulate custom transformations and use them in template expressions like built-in pipes.</div>
+  </section>
+</body>
+
+</html>
